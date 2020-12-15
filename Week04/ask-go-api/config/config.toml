@@ -1,0 +1,12 @@
+[env]
+    app_env = "local"
+    app_env_config = "config.local.toml"
+
+[compiler]
+    name     = "ask-go-api"
+    version  = "1.0.0"
+    arch     = "amd64,arm"
+    system   = "linux"
+    output   = ""
+    path     = "./bin/local"
+    extra    = "-ldflags \"-s -w\""

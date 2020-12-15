@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>Gfast开源框架演示站点</title>
+    <meta name="keywords" content="GO后台管理系统 GO权限管理系统 GO前后端分离框架">
+    <meta name="description" content="Gfast前后端分离框架由奇讯科技团队研发，公司以以统计宏观数据库平台、挂图作战(督办)指挥平台为主打产品,为您提供网站建设、软件开发、APP软件定制。0874-3331516">
+    <meta name="SiteName" content="育儿之家">
+    <meta name="SiteDomain" content="https://yuerso.com">
+    <link rel="shortcut icon" type="image/x-icon" href="http://demo.g-fast.cn:/image/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="http://demo.g-fast.cn:/cms/css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="http://demo.g-fast.cn:/cms/css/qxkj.css"/>
+    <link rel="stylesheet" type="text/css" href="http://demo.g-fast.cn:/cms/css/font-awesome-4.7.0/css/font-awesome.min.css"/>
+    <link href="http://demo.g-fast.cn:/css/swiper-6.1.1/swiper-bundle.min.css" rel="stylesheet">
+    <script type="text/javascript" src="http://demo.g-fast.cn:/js/jquery1.9.1/jquery.min.js"></script>
+    <script src="http://demo.g-fast.cn:/js/swiper-6.1.1/swiper-bundle.min.js"></script>
+    <script type="text/javascript">
+        $(function (){
+            var mySwiper = new Swiper('.swiper-container', {
+                loop: true, // 循环模式选项
+                autoplay:false,
+                autoplay: {
+                    delay: 3000, // 3秒切换一次
+                }, // 自动切换
+                // 如果需要前进后退按钮
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            })
+        })
+    </script>
+</head>
+
+<body>
+<div class="site">
+    <div class="container">
+
+        <div class="left-col">
+            <div class="site-branding">
+                <div id="logo">
+                    <a href="http://demo.g-fast.cn:/cms" rel="home">
+                        <img width="240" height="70" src="http://demo.g-fast.cn:/cms/images/logo.png" class="custom-logo" alt="Gfast"></a>
+                </div>
+            </div>
+            <div class="nav">
+                <ul class="sf-menu sf-arrows">
+                    <li><a href="/cms" class="active">最新推荐</a><ul class="sub-menu"></ul></li>
+                    <li><a href="/cms/list/17" class=" sf-with-ul">新闻快报</a>
+                        <ul class="sub-menu">
+                            <li><a href="/cms/list/26" class=" sf-with-ul">国内新闻</a>
+                                <ul class="sub-menu">
+                                    <li><a href="/cms/list/28" class="">时政新闻</a>
+                                        <ul class="sub-menu"></ul>
+                                    </li>
+                                    <li><a href="/cms/list/29" class="">趣文概要</a>
+                                        <ul class="sub-menu"></ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="/cms/list/27" class=" sf-with-ul">国际新闻</a>
+                                <ul class="sub-menu">
+                                    <li><a href="/cms/list/37" class="">国际时政</a>
+                                        <ul class="sub-menu"></ul>
+                                    </li>
+                                    <li><a href="/cms/list/38" class="">人文风景</a>
+                                        <ul class="sub-menu"></ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="/cms/list/18" class=" sf-with-ul">科技创新</a>
+                        <ul class="sub-menu">
+                            <li><a href="/cms/list/30" class="">创业俱乐部</a>
+                                <ul class="sub-menu"></ul>
+                            </li>
+                            <li><a href="/cms/list/31" class="">区块链</a>
+                                <ul class="sub-menu"></ul>
+                            </li>
+                            <li><a href="/cms/list/32" class="">互联网</a>
+                                <ul class="sub-menu"></ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="/cms/list/19" class=" sf-with-ul">房产家居</a>
+                        <ul class="sub-menu">
+                            <li><a href="/cms/list/33" class="">新房</a>
+                                <ul class="sub-menu"></ul>
+                            </li>
+                            <li><a href="/cms/list/34" class="">二手房</a>
+                                <ul class="sub-menu"></ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="/cms/list/20" class=" sf-with-ul">汽车资讯</a>
+                        <ul class="sub-menu">
+                            <li><a href="/cms/list/35" class="">上市新车</a>
+                                <ul class="sub-menu"></ul>
+                            </li>
+                            <li><a href="/cms/list/36" class="">用车小百科</a>
+                                <ul class="sub-menu"></ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="/cms/list/21" class="">旅游攻略</a>
+                        <ul class="sub-menu"></ul>
+                    </li>
+                    <li><a href="/cms/list/22" class="">体育视界</a>
+                        <ul class="sub-menu"></ul>
+                    </li>
+                    <li><a href="/cms/list/23" class="">财经股票</a>
+                        <ul class="sub-menu"></ul>
+                    </li>
+                    <li><a href="/cms/list/24" class="">美食天地</a>
+                        <ul class="sub-menu"></ul>
+                    </li>
+                    <li><a href="/cms/list/25" class="">教育公益</a>
+                        <ul class="sub-menu"></ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function(){
+                $('.sf-menu li').mouseover(function(e){
+                    $(this).children(".sub-menu").addClass("show-menu");
+                });
+                $('.sf-menu li').mouseout(function(){
+                    $(this).children(".sub-menu").removeClass("show-menu");
+                })
+            })
+        </script>
+
+        <div class="content-wrapper">
+            <div class="gslider">
+                <!-- 图片滑动 -->
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="http://demo.g-fast.cn:/cms/show/32/134" target="_blank">
+                                <img src="http://demo.g-fast.cn:/pub_upload/2020-11-04/c6ubir0lux3onyhrdl.jpg">
+                                <h3 class="slide-title">【腾讯云】12.11 云上盛惠，云产品限时抢购</h3>
+                            </a>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <a href="http://demo.g-fast.cn:/cms/show/32/133" target="_blank">
+                                <img src="http://demo.g-fast.cn:/pub_upload/2020-10-30/c6q31yvhfgb8y6mpyi.jpg">
+                                <h3 class="slide-title">阿里云双十一,2020双十一,2020阿里云双十一,阿里云上云津贴,双十一上云津贴</h3>
+                            </a>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <a href="http://demo.g-fast.cn:/cms/show/28/132" target="_blank">
+                                <img src="http://demo.g-fast.cn:/pub_upload/2020-10-30/c6q2we8re5mcjaxyxx.jpg">
+                                <h3 class="slide-title">美国称只要不涉及5G，将允许更多企业供货华为，透露什么信号？</h3>
+                            </a>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <a href="http://demo.g-fast.cn:/cms/show/32/131" target="_blank">
+                                <img src="http://demo.g-fast.cn:/pub_upload/2020-10-30/c6q2nvkjnxzkpowtqj.jpg">
+                                <h3 class="slide-title">独家对话华为王成录：手机 HarmonyOS 开发者 Beta 版将如约而至</h3>
+                            </a>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <a href="http://demo.g-fast.cn:/cms/show/21/129" target="_blank">
+                                <img src="http://demo.g-fast.cn:/pub_upload/2020-10-30/c6pwy5wn1398e93sjy.jpg">
+                                <h3 class="slide-title">摩洛哥撒哈拉攻略干货，解锁网红拍照点</h3>
+                            </a>
+                        </div>
+
+                    </div>
+                    <!-- 分页器 -->
+                    <div class="swiper-pagination"></div>
+                    <!-- 导航按钮 -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+            <div class="recent-content">
+                <h2><span>最新发布</span></h2>
+                <div class="lista">
+                    <h3>
+                        <a href="http://demo.g-fast.cn:/cms/show/32/134" target="_blank">【腾讯云】12.11 云上盛惠，云产品限时抢购</a>
+                    </h3>
+                    <div class="pov">
+                        <div class="sview">
+                            <div class="sviewl">
+                                <div class="tittop">
+                                    <b>发布于 2020-11-04</b>
+                                </div>
+                                <div class="art_summary">
+                                    <p>腾讯云11.11云上盛惠 ，精选热门产品助力上云，云服务器首年88元起，买的越多返的越多，最高返5000元！</p>
+                                </div>
+                                <div class="footbar">
+                                    <i class="footbar-category"><a href="http://demo.g-fast.cn:/cms/list/32">互联网</a></i>
+                                    <i class="footbar-like"><a href="javascript:;">阅读(51)</a></i>
+                                </div>
+                            </div>
+
+                            <div class="sviewr">
+                                <a href="http://demo.g-fast.cn:/cms/show/32/134" target="_blank"><img src="http://demo.g-fast.cn:/pub_upload/2020-11-04/c6ubir0lux3onyhrdl.jpg"></a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lista">
+                    <h3>
+                        <a href="http://demo.g-fast.cn:/cms/show/32/133" target="_blank">阿里云双十一,2020双十一,2020阿里云双十...</a>
+                    </h3>
+                    <div class="pov">
+                        <div class="sview">
+                            <div class="sviewl">
+                                <div class="tittop">
+                                    <b>发布于 2020-10-30</b>
+                                </div>
+                                <div class="art_summary">
+                                    <p>2020阿里云双十一开场啦，新老用户同享“开上云宝箱，领亿元津贴”活动，另外邀请新老用户得拼团礼包，有机会赢1...</p>
+                                </div>
+                                <div class="footbar">
+                                    <i class="footbar-category"><a href="http://demo.g-fast.cn:/cms/list/32">互联网</a></i>
+                                    <i class="footbar-like"><a href="javascript:;">阅读(177)</a></i>
+                                </div>
+                            </div>
+
+                            <div class="sviewr">
+                                <a href="http://demo.g-fast.cn:/cms/show/32/133" target="_blank"><img src="http://demo.g-fast.cn:/pub_upload/2020-10-30/c6q31yvhfgb8y6mpyi.jpg"></a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lista">
+                    <h3>
+                        <a href="http://demo.g-fast.cn:/cms/show/28/132" target="_blank">美国称只要不涉及5G，将允许更多企业供货华为，透...</a>
+                    </h3>
+                    <div class="pov">
+                        <div class="sview">
+                            <div class="sviewl">
+                                <div class="tittop">
+                                    <b>发布于 2020-10-30</b>
+                                </div>
+                                <div class="art_summary">
+                                    <p>几日前，三星电子显示部门表示，已获得美国许可，手机的有机发光二极管（OLED显示面板）可供货华为，是继英特尔、...</p>
+                                </div>
+                                <div class="footbar">
+                                    <i class="footbar-category"><a href="http://demo.g-fast.cn:/cms/list/28">时政新闻</a></i>
+                                    <i class="footbar-like"><a href="javascript:;">阅读(235)</a></i>
+                                </div>
+                            </div>
+
+                            <div class="sviewr">
+                                <a href="http://demo.g-fast.cn:/cms/show/28/132" target="_blank"><img src="http://demo.g-fast.cn:/pub_upload/2020-10-30/c6q2we8re5mcjaxyxx.jpg"></a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lista">
+                    <h3>
+                        <a href="http://demo.g-fast.cn:/cms/show/32/131" target="_blank">独家对话华为王成录：手机 HarmonyOS 开...</a>
+                    </h3>
+                    <div class="pov">
+                        <div class="sview">
+                            <div class="sviewl">
+                                <div class="tittop">
+                                    <b>发布于 2020-10-30</b>
+                                </div>
+                                <div class="art_summary">
+                                    <p>今年9月的华为开发者大会HDC2020上，华为发布了面向全场景的分布式操作系统HarmonyOS 2.0。这款...</p>
+                                </div>
+                                <div class="footbar">
+                                    <i class="footbar-category"><a href="http://demo.g-fast.cn:/cms/list/32">互联网</a></i>
+                                    <i class="footbar-like"><a href="javascript:;">阅读(114)</a></i>
+                                </div>
+                            </div>
+
+                            <div class="sviewr">
+                                <a href="http://demo.g-fast.cn:/cms/show/32/131" target="_blank"><img src="http://demo.g-fast.cn:/pub_upload/2020-10-30/c6q2nvkjnxzkpowtqj.jpg"></a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lista">
+                    <h3>
+                        <a href="http://demo.g-fast.cn:/cms/show/28/130" target="_blank">时政新闻眼丨五中全会公报这些新提法，即将走进你我...</a>
+                    </h3>
+                    <div class="pov">
+                        <div class="sview">
+                            <div class="sviewl">
+                                <div class="tittop">
+                                    <b>发布于 2020-10-30</b>
+                                </div>
+                                <div class="art_summary">
+                                    <p>“全面促进消费”“扎实推动共同富裕”“新型工农城乡关系”“实施乡村建设行动”“促进经济社会发展全面绿色转型”“...</p>
+                                </div>
+                                <div class="footbar">
+                                    <i class="footbar-category"><a href="http://demo.g-fast.cn:/cms/list/28">时政新闻</a></i>
+                                    <i class="footbar-like"><a href="javascript:;">阅读(105)</a></i>
+                                </div>
+                            </div>
+
+                            <div class="sviewr">
+                                <a href="http://demo.g-fast.cn:/cms/show/28/130" target="_blank"><img src="http://demo.g-fast.cn:/pub_upload/2020-10-30/c6pwzxde4qkkciir2g.jpeg"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lista">
+                    <h3>
+                        <a href="http://demo.g-fast.cn:/cms/show/21/129" target="_blank">摩洛哥撒哈拉攻略干货，解锁网红拍照点</a>
+                    </h3>
+                    <div class="pov">
+                        <div class="sview">
+                            <div class="sviewl">
+                                <div class="tittop">
+                                    <b>发布于 2020-10-30</b>
+                                </div>
+                                <div class="art_summary">
+                                    <p>撒哈拉之于我，除了三毛还有地理书上学到的世界上最大的沙漠。我想亲近沙子，想去看看这个世界上最大的猫砂盆到底长啥...</p>
+                                </div>
+                                <div class="footbar">
+                                    <i class="footbar-category"><a href="http://demo.g-fast.cn:/cms/list/21">旅游攻略</a></i>
+                                    <i class="footbar-category"><a href="http://demo.g-fast.cn:/cms/list/38">人文风景</a></i>
+                                    <i class="footbar-like"><a href="javascript:;">阅读(116)</a></i>
+                                </div>
+                            </div>
+
+                            <div class="sviewr">
+                                <a href="http://demo.g-fast.cn:/cms/show/21/129" target="_blank"><img src="http://demo.g-fast.cn:/pub_upload/2020-10-30/c6pwy5wn1398e93sjy.jpg"></a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lista">
+                    <h3>
+                        <a href="http://demo.g-fast.cn:/cms/show/25/128" target="_blank">百胜中国“捐一元”开启第十一年爱心之旅</a>
+                    </h3>
+                    <div class="pov">
+                        <div class="sview">
+                            <div class="sviewl">
+                                <div class="tittop">
+                                    <b>发布于 2020-10-30</b>
+                                </div>
+                                <div class="art_summary">
+                                    <p>对于贵州省三都水族自治县都江镇甲找村甲找小学的师生而言，7月24日是个美好的日子。学校里来了许多和善的叔叔阿姨...</p>
+                                </div>
+                                <div class="footbar">
+                                    <i class="footbar-category"><a href="http://demo.g-fast.cn:/cms/list/25">教育公益</a></i>
+                                    <i class="footbar-like"><a href="javascript:;">阅读(81)</a></i>
+                                </div>
+                            </div>
+
+                            <div class="sviewr">
+                                <a href="http://demo.g-fast.cn:/cms/show/25/128" target="_blank"><img src="http://demo.g-fast.cn:/pub_upload/2020-10-30/c6pww9dkku60m8yrpv.jpg"></a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="sitebar">
+            <div class="searchbox">
+                <form id="searchform" method="get" action="http://demo.g-fast.cn:/cms/search/1">
+                    <input type="search" name="keyWords" class="search-input" value="" placeholder="请输入关键词" autocomplete="off">
+                    <button type="submit" class="search-submit">搜索</button>
+                </form>
+            </div>
+            <div class="ali">
+                <a href="https://www.aliyun.com/activity/daily/bestoffer?userCode=fcor2omk">
+                    <img src="http://demo.g-fast.cn:/cms/images/ay.jpg">
+                </a>
+            </div>
+            <div class="sitebar-article">
+                <h2><span>推荐文章</span></h2>
+                <div class="sitebar-article-list">
+                    <ul>
+                        <li>
+                            <div class="artl">
+                                <a href="http://demo.g-fast.cn:/cms/show/32/134" target="_blank">
+                                    <p>【腾讯云】12.11 云上盛惠，云产品限...</p>
+                                </a>
+                                <label>2020-11-04</label>
+                            </div>
+
+                            <div class="artr">
+                                <a href="http://demo.g-fast.cn:/cms/show/32/134" target="_blank"><img src="http://demo.g-fast.cn:/pub_upload/2020-11-04/c6ubir0lux3onyhrdl.jpg"></a>
+                            </div>
+
+                        </li>
+
+                        <li>
+                            <div class="artl">
+                                <a href="http://demo.g-fast.cn:/cms/show/32/133" target="_blank">
+                                    <p>阿里云双十一,2020双十一,2020阿...</p>
+                                </a>
+                                <label>2020-10-30</label>
+                            </div>
+
+                            <div class="artr">
+                                <a href="http://demo.g-fast.cn:/cms/show/32/133" target="_blank"><img src="http://demo.g-fast.cn:/pub_upload/2020-10-30/c6q31yvhfgb8y6mpyi.jpg"></a>
+                            </div>
+
+                        </li>
+
+                        <li>
+                            <div class="artl">
+                                <a href="http://demo.g-fast.cn:/cms/show/22/127" target="_blank">
+                                    <p>世界杯最大牌女球迷，一举动令人钦佩</p>
+                                </a>
+                                <label>2020-10-30</label>
+                            </div>
+
+                            <div class="artr">
+                                <a href="http://demo.g-fast.cn:/cms/show/22/127" target="_blank"><img src="http://demo.g-fast.cn:/pub_upload/2020-10-30/c6pwvdddc9kolqpyvu.jpg"></a>
+                            </div>
+
+                        </li>
+
+                        <li>
+                            <div class="artl">
+                                <a href="http://demo.g-fast.cn:/cms/show/35/126" target="_blank">
+                                    <p>特斯拉Model 3高清官图公布:设计极...</p>
+                                </a>
+                                <label>2020-10-30</label>
+                            </div>
+
+                            <div class="artr">
+                                <a href="http://demo.g-fast.cn:/cms/show/35/126" target="_blank"><img src="http://demo.g-fast.cn:/pub_upload/2020-10-30/c6pwuapknpacaljqm5.jpg"></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="ali">
+                <a href="https://www.aliyun.com/daily-act/ecs/care?userCode=fcor2omk">
+                    <img src="http://demo.g-fast.cn:/cms/images/aliyun.jpg">
+                </a>
+            </div>
+
+            <div class="sitebar-article">
+                <h2><span>点击最多的文章</span></h2>
+                <div class="sitebar-article-list">
+                    <ul>
+                        <li>
+                            <div class="artl">
+                                <a href="http://demo.g-fast.cn:/cms/show/28/132" target="_blank">
+                                    <p>美国称只要不涉及5G，将允许更多企业供货...</p>
+                                </a>
+                                <label>2020-10-30</label>
+                            </div>
+
+                            <div class="artr">
+                                <a href="http://demo.g-fast.cn:/cms/show/28/132" target="_blank"><img src="http://demo.g-fast.cn:/pub_upload/2020-10-30/c6q2we8re5mcjaxyxx.jpg"></a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="artl">
+                                <a href="http://demo.g-fast.cn:/cms/show/32/133" target="_blank">
+                                    <p>阿里云双十一,2020双十一,2020阿...</p>
+                                </a>
+                                <label>2020-10-30</label>
+                            </div>
+
+                            <div class="artr">
+                                <a href="http://demo.g-fast.cn:/cms/show/32/133" target="_blank"><img src="http://demo.g-fast.cn:/pub_upload/2020-10-30/c6q31yvhfgb8y6mpyi.jpg"></a>
+                            </div>
+
+                        </li>
+
+                        <li>
+                            <div class="artl">
+                                <a href="http://demo.g-fast.cn:/cms/show/21/129" target="_blank">
+                                    <p>摩洛哥撒哈拉攻略干货，解锁网红拍照点</p>
+                                </a>
+                                <label>2020-10-30</label>
+                            </div>
+
+                            <div class="artr">
+                                <a href="http://demo.g-fast.cn:/cms/show/21/129" target="_blank"><img src="http://demo.g-fast.cn:/pub_upload/2020-10-30/c6pwy5wn1398e93sjy.jpg"></a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="artl">
+                                <a href="http://demo.g-fast.cn:/cms/show/32/131" target="_blank">
+                                    <p>独家对话华为王成录：手机 Harmony...</p>
+                                </a>
+                                <label>2020-10-30</label>
+                            </div>
+
+                            <div class="artr">
+                                <a href="http://demo.g-fast.cn:/cms/show/32/131" target="_blank"><img src="http://demo.g-fast.cn:/pub_upload/2020-10-30/c6q2nvkjnxzkpowtqj.jpg"></a>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
