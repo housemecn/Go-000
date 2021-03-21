@@ -62,7 +62,7 @@ https://github.com/jacobxy/Go-000/tree/main/Week13
 
 https://github.com/HuaiJoe/Go-000/blob/main/Week13/%E9%87%8D%E6%9E%84%E6%95%B4%E7%90%86.md
 
-
+https://xiaomi-info.github.io/2020/01/02/distributed-transaction/
 
 
 
