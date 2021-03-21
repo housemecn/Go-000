@@ -1,0 +1,192 @@
+毕业项目
+
+### 项目简介
+
+```
+由于毕业设计时间较短，无法全新设计一个项目。
+按老师的指导，可以总结之前项目的业务场景，进行项目小结和总结分析，谈谈项目的心得体会的思考的问题。
+
+Jumper-parent是集成当前java微服务技术的，基于行业场景是智慧妇幼行业，远程监护及家庭健康管理。整个系统使用的Java平台技术栈的微服务技术架构，前后端分离。
+整个项目架构，遵循高内聚，低耦合的拆分设计模式，应对企业多变灵活的业务场景。
+```
+
+### 系统介绍
+
+jumper-platform ，是基于spring cloud alibaba + K8s 容器化部署搭建的一套企业级微服务后端框架。
+其核心的设计目标是分离前后端，快速开发部署，快速响应前端业务需求，逐步形成轻量级的、初步可用的企业级业务中台框架。
+
+- 基于微服务系统架构设计
+- 使用spring boot 作为基本的服务单元，进行业务拆分。
+- 整合原有业务，逐步将原业务迁移到本微服务架构。
+- 优化Spring Security内部实现，实现API调用的统一出口和权限认证授权中心
+- 提供完善的企业微服务流量监控，日志监控能力
+- 提供完善的容器化docker部署方案
+- 提供完善的Kubernetes部署方案
+
+### 微服务架构
+
+- 基于新的业务规划，构建新的容器化业务服务中台；
+
+- 前后端分离的方案，可支持前端控制台，小程序，移动端，外部系统对接等
+
+- 企业级系统代码的结构。具体如下：
+
+  ```
+  Jumper-parent
+  ├── Jumper-common                   -- 公共模块
+      ├── common-core                 -- core包工具类
+      ├── common-web                  -- MVC web处理
+      ├── common-redis                -- Redis抽取层
+      ├── common-mybatis              -- 数据库公共模块抽取
+  ├── Jumper-consumer                 -- BFF层
+      ├── consumer-console-remote     -- 后台管理平台接口层
+      ├── consumer-mobile-remote      -- 移动端接口层
+      ├── consumer-im-remote          -- spring cloud 网关
+      ├── consumer-monitor-remote     -- spring cloud 网关
+  ├── Jumper-discovery                -- 基础服务集成
+      ├── Jumper-admin                -- 监控服务
+      ├── Jumper-gateway              -- spring cloud 网关
+      ├── Jumper-nacos                -- 注册中心
+      ├── Jumper-sentinel             -- sentinel
+  ├── Jumper-generator                -- VO,BO,PO,TO模型层
+      ├── generator-auth              -- auth 模型定义
+      ├── generator-system            -- system 模型定义
+      ├── generator-……           		  -- 其他各模块的模型定义
+  ├── Jumper-provider                 -- 接口微服务层
+      ├── provider-auth               -- 认证中心
+      ├── provider-system             -- 统一授权
+      ├── provider-task               -- 任务管理
+      ├── provider-mesage             -- 消息服务
+      ├── provider-content            -- 内容社区
+      ├── provider-mall               -- 统一商城
+      ├── provider-organization       -- 组织机构
+      ├── provider-guardianship       -- 数据监测（胎心监护、血糖、血压、营养、体重...）
+      ├── provider-im                 -- IM客户服务      
+      ├── provider-homehealth         -- 居家健康服务      
+      ├── provider-analysis           -- 数据分析        
+  ├── Jumper-provider-api             -- 接口fegin调用层
+      ├── provider-auth-api           -- 认证中心API
+      ├── provider-system-api         -- 统一授权API
+      ├── provider-task-api           -- 任务管理
+      ├── provider-mesage-api         -- 消息服务
+      ├── provider-content-api        -- 内容社区
+      ├── provider-mall-api           -- 统一商城
+      ├── provider-organization-api   -- 组织机构
+      ├── provider-guardianship-api   -- 数据监测
+      ├── provider-im-api             -- IM客户服务      
+      ├── provider-homehealth-api     -- 居家健康服务      
+      ├── provider-analysis-api       -- 数据分析     
+  ├── Jumper-parent-xml               -- 全局版本控制
+  ```
+
+  
+
+#### 微服务
+
+  1. BFF：基于业务场景，讲运营管理后台、移动端孕妇端、实时监测平台、客户服务IM平台，分别设计了不同的BFF层，调用provider 层的各业务
+  2. Service：服务层，由各业务场景单独的服务提供。具体的业务，有toB，和toC 两部分。
+  3. Admin：管理端
+  4. Job：有专门的JOb服务，负责系统的定时任务job 部分
+  5. Task ：有专门负责定时任务的provider-task 服务。
+  6. 分模块：如上图，已经清晰的拆分；
+
+#### 业务场景示意图
+
+![image-20210321195835624](http://img.susense.cn/image-20210321195835624.png)
+
+
+
+![image-20210321195916806](http://img.susense.cn/image-20210321195916806.png)
+
+
+
+### 平台技术栈
+
+![](http://img.susense.cn/wehealthCh.jpg)
+
+
+
+- 技术架构采用分布式框架spring cloud alibaba及相关技术栈
+  - spring boot
+  - Sentinel：把流量作为切入点，从流量控制、熔断降级、系统负载保护等多个维度保护服务的稳定性
+  - Nacos：目前稳定版本1.4.0
+  - spring cloud gateway
+  - spring boot admin
+  - 认证授权 Oauth2 ，Jwt
+  - 链路监控 Sleuth、Skywalking
+- 日志系统
+  - ELK （Elasticsearch+Logstash+Kibana）
+- 消息队列
+  - RabbitMQ
+- 定时任务系统
+  -  Quartz Job Scheduler
+- 数据缓存
+  - Redis 
+- 数据库存储
+  - mysql 5.7
+  - MyBatis
+- 非关系型数据存储
+  - qiniuCloud 文件存储
+  - MongoDB 
+- 前端负载均衡
+  - nginx
+
+------
+
+
+>  版本说明
+
+| 组件                   | 版本          | 备注 |
+| ---------------------- | ------------- | ---- |
+| SpringBoot             | 2.3.4.RELEASE |      |
+| SpringCloud            | Hoxton.SR8    |      |
+| SpringCloud Alibaba    | 2.2.0.RELEASE |      |
+| SpringCloud sentinel   | 2.2.2.RELEASE |      |
+| Spring Security OAuth2 | 2.2.4.RELEASE |      |
+| MyBatis Plus           | 3.4.0         |      |
+| Druid                  | 1.1.23        |      |
+| Lombok                 | 1.18.12       |      |
+| Swagger                | 2.9.2         |      |
+| Apollo                 | 2.8.0         |      |
+
+
+
+### 项目工程化
+
+#### 自动化流水线CI/CD
+
+
+
+![image-20210321195250542](http://img.susense.cn/image-20210321195250542.png)
+
+
+
+#### 项目结构
+
+见上述 工程结构
+
+#### 代码分层
+
+见上述工程描述部分
+
+#### ORM 框架 
+
+见微服务描述部分
+
+
+### 学习心得
+
+1.  毛剑老师专业性的深度和知识面的广度，都非常学员钦佩，学习的热情和对技术的追求，都值得我们学习。
+2.  在上面项目的分析中，微服务的部分，主要还是用的Java 技术栈的微服务，报此班之前，自己自学了一段时间golang，此方面的项目经验欠缺，但微服务java系列的，还是有一定的经验。
+3.  此项目是一个重构设计的项目，API部分，采用是的fegin，如果golang 开发，应该会采用gRPC 定义APi相关的规范。
+4.  工程化方面，目前还算是使用了一些工具。
+5.  golang并发，目前暂未在项目中应用到，后续是需要大力去学习的。
+6.  中间件，日志和监控等，主要使用了MQ 队列，日志存储ELK，和链路追踪Skywalking。
+7.  学习方法心得：
+    1.  需要非常自律的坚持，需要热爱，兴趣是最好的老师。
+    2.  跟着老师，讲课程内的知识点，自行消化理解，最好养成做笔记的习惯，老师在课程中的知识信息密度非常高，需要课后查资料补充自己的知识盲区。
+    3.  勤动手和勤思考，勤小结。
+    4.  可以把自己学到的分享给其他朋友。讲一遍是最好的方式。
+    
+    
+[原始链接](https://github.com/zhanglxun/Go-000/tree/main/Week13)  
